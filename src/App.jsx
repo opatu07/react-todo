@@ -14,6 +14,7 @@ const FILTER_NAMES = Object.keys(FILTER_MAP);
 function App(props) {
 
   const [filter, setFilter] = useState("All");
+  const [searchTerm, setSearchTerm] = useState(""); 
 
   const filterList = FILTER_NAMES.map((name) => (
     <FilterButton 
@@ -61,8 +62,15 @@ function App(props) {
   }
 
   const [tasks, setTasks] = useState(props.tasks);
-  const taskList = tasks
-  .filter(FILTER_MAP[filter])
+
+  const filteredTasks = tasks
+    .filter(FILTER_MAP[filter]) // ✅ フィルター適用（All, Active, Completed）
+    .filter((task) => {
+      const words = task.name.toLowerCase().split(/\s+/); // タスク名を単語に分割
+      return words.some(word => word.startsWith(searchTerm.toLowerCase())); // 先頭から比較
+    });
+
+  const taskList = filteredTasks
   .map((task) => (
     <Todo
       id={task.id}
@@ -75,13 +83,22 @@ function App(props) {
     />
   ));
 
+
+
   const tasksNoun = taskList.length !== 1 ? "tasks" : "task";
   const headingText = `${taskList.length} ${tasksNoun} remaining`;
 
   return (
     <div className="todoapp stack-large">
-      <h1>TodoMatic</h1>
+      <h1>Todo List</h1>
       <Form addTask={addTask} />
+      <input
+        type="text"
+        placeholder="Search tasks..."
+        className="input input__lg"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <div className="filters btn-group stack-exception">
         {filterList}
       </div>
