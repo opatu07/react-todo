@@ -83,22 +83,23 @@ function App(props) {
     />
   ));
 
-
-
   const tasksNoun = taskList.length !== 1 ? "tasks" : "task";
   const headingText = `${taskList.length} ${tasksNoun} remaining`;
 
   return (
     <div className="todoapp stack-large">
       <h1>Todo List</h1>
-      <Form addTask={addTask} />
+      
       <input
         type="text"
-        placeholder="Search tasks..."
+        placeholder="search keyword"
         className="input input__lg"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
+
+      <Form addTask={addTask} />
+
       <div className="filters btn-group stack-exception">
         {filterList}
       </div>

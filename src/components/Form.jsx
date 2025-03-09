@@ -15,11 +15,6 @@ function Form(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2 className="label-wrapper">
-        <label htmlFor="new-todo-input" className="label__lg">
-          ADD TASK
-        </label>
-      </h2>
       <input
         type="text"
         id="new-todo-input"
@@ -28,10 +23,9 @@ function Form(props) {
         autoComplete="off"
         value={name}
         onChange={handleChange}
+        placeholder="create todo title"
       />
-      <button type="submit" className="btn btn__primary btn__lg">
-        Add
-      </button>
+
     </form>
   );
 }
