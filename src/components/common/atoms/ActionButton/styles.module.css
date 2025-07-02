@@ -1,0 +1,19 @@
+
+.actionButton {
+  background-color: #FFA500; /* オレンジの色コード */
+  color: #4D4D4D;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* ホバー時の滑らかな変化のために追加 */
+}
+
+.actionButton:hover {
+  background-color: #CC8400; /* ホバー時の少し濃いオレンジ */
+}
+
+.actionButton:active {
+  background-color: #B37300; /* クリック時のさらに濃いオレンジ */
+}

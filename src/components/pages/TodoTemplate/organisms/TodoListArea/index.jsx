@@ -1,5 +1,5 @@
 import { ActionButton } from '../../../../common/atoms/ActionButton'
-import { DeleteButton } from '../../../../common/atoms/DeleteButton'
+import { DeleteButton } from '../../../../common/atoms/DangerButton'
 
 export const TodoListArea = () => {
     return (

@@ -1,0 +1,19 @@
+
+.dangerButton {
+  background-color: #FF0000; /* オレンジの色コード */
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* ホバー時の滑らかな変化のために追加 */
+}
+
+.dangerButton:hover {
+  background-color: #C82333; /* ホバー時の少し濃いオレンジ */
+}
+
+.dangerButton:active {
+  background-color: #BD2130; /* クリック時のさらに濃いオレンジ */
+}

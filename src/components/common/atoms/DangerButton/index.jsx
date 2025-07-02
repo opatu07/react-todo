@@ -1,8 +1,8 @@
-import './style.css'; 
+import styles from './styles.module.css'
 
 const ActionButton = ({ title, onClick }) => {
   return (
-    <button className="common-button" onClick={onClick}>
+    <button className={styles.dangerButton} onClick={onClick}>
       {title}
     </button>
   );

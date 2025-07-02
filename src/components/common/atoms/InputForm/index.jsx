@@ -1,12 +1,13 @@
-import './style.css'; 
+import styles from './styles.module.css'; 
 
-const InputForm = ({ type, placeholder, onChange }) => {
+const InputForm = ({ type, placeholder, value, onChange }) => {
   return (
     <input
       type={type}
       placeholder={placeholder}
       value={value}
       onChange={onChange}
+      className={styles.inputForm}
     />
   );
 };
