@@ -1,5 +1,5 @@
 import styles from './styles.module.css'
-const ActionButton = ({ title, onClick }) => {
+export const ActionButton = ({ title, onClick }) => {
   return (
     <button className={styles.actionButton} onClick={onClick}>
       {title}
@@ -7,4 +7,3 @@ const ActionButton = ({ title, onClick }) => {
   );
 };
 
-export default ActionButton;
