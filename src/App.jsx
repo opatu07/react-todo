@@ -1,33 +1,25 @@
-import { useState } from "react";
-import { INIT_TODO_LIST, INIT_UNIQUE_ID } from "./dummy/initial-data.js"
-import Template from "./components/Templates/template.jsx"
+import { BrowserRouter as Router, Routes, Route,} from 'react-router-dom';
+// import { INIT_TODO_LIST, INIT_UNIQUE_ID } from "./dummy/initial-data.js"
+import { TodoTemplate } from '../src/components/pages/TodoTemplate';
+import { TodoProvider } from './contexts/TodoContext';
 
-function App() {
-  const [list, setList] = useState(INIT_TODO_LIST);
-  const [originalList, setOriginalList] = useState(INIT_TODO_LIST);
-  const [counter, setCounter] = useState(INIT_UNIQUE_ID);
-  const [todo, setTodo] = useState({ id: counter, title: "" });
-  const [searchTerm, setSearchTerm] = useState("");
+const App = () => {
   return (
-    <>
-      <div className="template">
-        <Template
-          todo={todo}
-          setTodo={setTodo}
-          id={counter}
-          list={list}
-          setList={setList}
-          originalList={originalList}
-          setOriginalList={setOriginalList}
-          counter={counter}
-          setCounter={setCounter}
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-        />
-      </div>
-    </>
-  )
-
-}
+    <TodoProvider>
+      <Router>
+        <div className="app">
+          <Routes>
+            <Route 
+              path="/todo" 
+              element={
+                  <TodoTemplate />
+              } 
+            />
+          </Routes>
+        </div>
+      </Router>
+    </TodoProvider>
+  );
+};
 
 export default App;
