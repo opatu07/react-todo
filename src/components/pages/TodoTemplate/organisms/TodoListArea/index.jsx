@@ -46,7 +46,7 @@ export const TodoListArea = () => {
                                     title="保存"
                                     type="submit"
                                 />
-                                <DangerButton
+                                <ActionButton
                                     title="キャンセル"
                                     onClick={() => handleCancel(item.id)}
                                 />

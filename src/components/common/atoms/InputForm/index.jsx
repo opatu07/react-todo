@@ -36,7 +36,6 @@ export const InputForm = ({ type, placeholder, value, onChange }) => {
     const currentValue = value !== undefined ? value : inputValue;
     if (currentValue.trim()) {
       addTodo(currentValue.trim());
-      // 内部状態を管理している場合はクリア
       if (value === undefined) {
         setInputValue('');
       }
