@@ -10,10 +10,10 @@ const App = () => {
         <div className="app">
           <Routes>
             <Route 
-              path="/todo" 
+              path="/" 
               element={
                   <TodoTemplate />
-              } 
+              }
             />
           </Routes>
         </div>
